@@ -1,13 +1,13 @@
-DROP TABLE IF EXISTS billionaires;
+DROP TABLE IF EXISTS expansion;
 	 
-	CREATE TABLE expansions (
-	  id INT AUTO_INCREMENT  PRIMARY KEY,
+	CREATE TABLE expansion (
+	  id LONG AUTO_INCREMENT  PRIMARY KEY,
 	  name VARCHAR(100) NOT NULL,
 	  flavor VARCHAR(2000) NOT NULL,
 	  mechanics VARCHAR(2000) NOT NULL
 	);
 	 
-	INSERT INTO expansions (name, flavor, mechanics) VALUES
+	INSERT INTO expansion (name, flavor, mechanics) VALUES
 	  ('Dominion (Base Game)',
 	  'You are a monarch, like your parents before you, a ruler of a small pleasant kingdom of rivers and evergreens. Unlike your parents, however, you have hopes and dreams! You want a bigger and more pleasant kingdom, with more rivers and a wider variety of trees. You want a Dominion! In all directions lie fiefs, freeholds, and feodums. All are small bits of land, controlled by petty lords and verging on anarchy. You will bring civilization to these people, uniting them under your banner. But wait! It must be something in the air; several other monarchs have had the exact same idea. You must race to get as much of the unclaimed land as possible, fending them off along the way. To do this you will hire minions, construct buildings, spruce up your castle, and fill the coffers of your treasury. Your parents wouldn’t be proud, but your grandparents, on your mothers side, would be delighted.',
 	  'This is a game of building a deck of cards. The deck represents your Dominion. It contains your resources, victory points, and the things you can do. It starts out a small sad collection of Estates and Coppers, but you hope that by the end of the game it will be brimming with Gold, Provinces, and the inhabitants and structures of your castle and kingdom. You win by having the most VP in your deck when the game ends.'),

@@ -1,14 +1,31 @@
 package com.benjaminyuly.harbinger;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Expansion {
 	
-	private final long id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	
 	private String name;
+	
+	@Column(length=1000)
 	private String flavor;
+	
+	@Column(length=1000)
 	private String mechanics;
 	
-	public Expansion(long id, String name, String flavor, String mechanics) {
-		this.id = id;
+	public Expansion() {
+		
+	}
+	
+	public Expansion(String name, String flavor, String mechanics) {
 		this.setName(name);
 		this.setFlavor(flavor);
 		this.setMechanics(mechanics);
@@ -64,7 +81,7 @@ public class Expansion {
 	/**
 	 * @return the id
 	 */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
