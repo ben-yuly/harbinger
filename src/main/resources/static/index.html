@@ -1,24 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html xmlns:th="https://www.thymeleaf.org">
+<head lang="en">
     <meta charset="UTF-8">
     <title>Harbinger</title>
-    <!--  <script>(async () => {
-    	  const rawResponse = await fetch('http://localhost:8080/expansion', {
-    		    method: 'POST',
-    		    headers: {
-    		      'Accept': 'application/json',
-    		      'Content-Type': 'application/json'
-    		    },
-    		    body: JSON.stringify({"name":"test2","flavor":"testflavor2","mechanics":"testmechanic2"})
-    		  });
-    		  const content = await rawResponse.json();
-
-    		  console.log(content);
-    		})();
-    </script> -->
+    <link rel="stylesheet" href="/main.css" />
 </head>
 <body>
+	<div> id="react"></div>
+	<script src=built/bundle.js"></script>
     <div>
         <h1>Welcome to Harbinger!</h1><br>
         <p>Harbinger is a simple web app that allows you to randomize your Dominion games without all the work of using the randomizer deck. Enjoy!</p><br>
