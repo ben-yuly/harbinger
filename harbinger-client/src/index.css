@@ -1,0 +1,14 @@
+@font-face{
+	font-family: Ruritania;
+	src: url("./Ruritania.ttf") format("truetype");
+}
+.titleFont{
+	font-family:"Ruritania";
+	text-align:center;
+}
+.app{
+	margin:auto;
+	width:50%;
+	border: 20px solid darkgreen;
+	padding: 10px;
+}

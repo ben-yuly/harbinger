@@ -29,7 +29,12 @@ class Index extends React.Component{
 		}
 
 		return (
+			<div className="app">
+				<header className="titleFont">
+					<h1>Harbinger</h1>
+				</header>
 			<ExpansionList expansions={expansions}/>
+			</div>
 		)
 	}
 }
