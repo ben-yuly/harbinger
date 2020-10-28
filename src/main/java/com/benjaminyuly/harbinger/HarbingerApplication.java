@@ -9,5 +9,6 @@ public class HarbingerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HarbingerApplication.class, args);
 	}
+	
 
 }
