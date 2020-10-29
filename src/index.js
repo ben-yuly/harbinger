@@ -12,17 +12,17 @@ class Index extends React.Component{
 	componentDidMount() {
 		this.setState({isLoading: true});
 
-		fetch('http://localhost:8080/expansions')
+		fetch('http://localhost:8080/sets')
 		.then(response => response.json())
-		.then(data => this.setState({expansions: data, isLoading: false}));
+		.then(data => this.setState({sets: data, isLoading: false}));
 
-		console.log(fetch('http://localhost:8080/expansions')
+		console.log(fetch('http://localhost:8080/sets')
 		.then(response => response.json())
-		.then(data => this.setState({expansions: data, isLoading: false})));
+		.then(data => this.setState({sets: data, isLoading: false})));
 	}
 
 	render() {
-		const {expansions, isLoading} = this.state;
+		const {sets, isLoading} = this.state;
 
 		if (isLoading) {
 			return (<p>Loading...</p>);
@@ -33,16 +33,16 @@ class Index extends React.Component{
 				<header className="titleFont">
 					<h1>Harbinger</h1>
 				</header>
-			<ExpansionList expansions={expansions}/>
+			<SetList sets={sets}/>
 			</div>
 		)
 	}
 }
 
-class ExpansionList extends React.Component{
+class SetList extends React.Component{
 	render() {
-		const expansions = this.props.expansions.map(expansion =>
-			<Expansion key={expansion.id} expansion={expansion}/>
+		const sets = this.props.sets.map(set =>
+			<Set key={set.id} set={set}/>
 		);
 		return (
 			<table>
@@ -53,21 +53,21 @@ class ExpansionList extends React.Component{
 						<th>Flavor</th>
 						<th>Mechanics</th>
 					</tr>
-					{expansions}
+					{sets}
 				</tbody>
 			</table>
 		)
 	}
 }
 
-class Expansion extends React.Component{
+class Set extends React.Component{
 	render() {
 		return (
 			<tr>
-				<td>{this.props.expansion.id}</td>
-				<td>{this.props.expansion.name}</td>
-				<td>{this.props.expansion.flavor}</td>
-				<td>{this.props.expansion.mechanics}</td>
+				<td>{this.props.set.id}</td>
+				<td>{this.props.set.name}</td>
+				<td>{this.props.set.flavor}</td>
+				<td>{this.props.set.mechanics}</td>
 			</tr>
 		)
 	}
