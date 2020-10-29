@@ -16,10 +16,10 @@ public class Expansion {
 	
 	private String name;
 	
-	@Column(length=1000)
+	@Column(length=2000)
 	private String flavor;
 	
-	@Column(length=1000)
+	@Column(length=2000)
 	private String mechanics;
 	
 	public Expansion() {
