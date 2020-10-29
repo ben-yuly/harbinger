@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author Ben Yuly
  *
  */
-public interface CardRepository extends JpaRepository<Expansion, String> {
+public interface CardRepository extends JpaRepository<Card, String> {
 
 }

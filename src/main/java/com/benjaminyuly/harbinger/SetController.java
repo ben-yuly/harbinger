@@ -16,27 +16,27 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-public class ExpansionsController {
-	private final ExpansionRepository repository;
+public class SetController {
+	private final SetRepository repository;
 	
-	ExpansionsController(ExpansionRepository repository) {
+	SetController(SetRepository repository) {
 		this.repository = repository;
 	}
 	
-	@GetMapping("/expansions")
-	List<Expansion> all(){
+	@GetMapping("/sets")
+	List<Set> all(){
 		return repository.findAll();
 	}
 	
-	@GetMapping("/expansions/{id}")
-	ResponseEntity<Expansion> getExpansion(@PathVariable String id) {
-		Optional<Expansion> result = repository.findById(id);
+	@GetMapping("/sets/{id}")
+	ResponseEntity<Set> getExpansion(@PathVariable String id) {
+		Optional<Set> result = repository.findById(id);
 		return ResponseEntity.of(result);
 	}
 	
-	@PostMapping(value="/expansion",consumes="application/json")
-	ResponseEntity<Expansion> createGroup(@RequestBody Expansion expansion) throws URISyntaxException {
-		Expansion result = repository.save(expansion);
+	@PostMapping(value="/set",consumes="application/json")
+	ResponseEntity<Set> createGroup(@RequestBody Set expansion) throws URISyntaxException {
+		Set result = repository.save(expansion);
 		return ResponseEntity.created(new URI("/expansions/" + result.getId())).body(result);
 	}
 	
@@ -47,7 +47,7 @@ public class ExpansionsController {
 //		return ResponseEntity.ok(result);
 //	}
 
-	@DeleteMapping("/expansion/{id}")
+	@DeleteMapping("/set/{id}")
 	public ResponseEntity<?> deleteExpansion(@PathVariable String id){
 		repository.deleteById(id);
 		return ResponseEntity.ok().build();

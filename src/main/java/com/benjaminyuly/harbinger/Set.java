@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class Expansion {
+public class Set {
 	
 	@Id
 	@GeneratedValue(generator = "uuid")
@@ -22,11 +22,11 @@ public class Expansion {
 	@Column(length=2000)
 	private String mechanics;
 	
-	public Expansion() {
+	public Set() {
 		
 	}
 	
-	public Expansion(String name, String flavor, String mechanics) {
+	public Set(String name, String flavor, String mechanics) {
 		this.setName(name);
 		this.setFlavor(flavor);
 		this.setMechanics(mechanics);
